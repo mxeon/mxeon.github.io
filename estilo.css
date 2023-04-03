@@ -6,6 +6,39 @@ body {
   padding: 0;
 }
 
+.hrespo {
+  font-size: 6vw; /*El tamaño del texto será del 6% del ancho de la ventana*/
+  text-align: center; /*Centra el texto en el contenedor*/
+}
+
+.hresposub {
+  font-size: 3vw; /*El tamaño del texto será del 6% del ancho de la ventana*/
+  text-align: center; /*Centra el texto en el contenedor*/
+  font-style: italic;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+
 table {
   width: 60%;
   margin: 0 auto; /* Centra la tabla */
@@ -72,7 +105,9 @@ a {
   color: #333;
   text-decoration: none;
   border-bottom: 1px solid #333;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 100%;
 }
 
 a:hover,
@@ -87,7 +122,6 @@ input[type="number"] {
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  transition: all 0.3s ease;
 }
 
 input[type="number"]:focus {
