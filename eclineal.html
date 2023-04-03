@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  <title>Tabulacion de funciones</title>
+  <link href="estilo.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <center>
+  <h1>Tabulacion de funciones</h1>
+
+  <h4>Ecuación lineal (y = mx + n)</h4><br>
+
+  <label for="m">Inserte el valor de 'm': </label><br>
+<input type="number" id="m"><br><br>
+
+<label for="n">Inserte el valor de 'n': </label><br>
+<input type="number" id="n"><br><br>
+
+<label for="min">Indique el punto menor en el eje x: </label><br>
+<input type="number" id="min"><br><br>
+
+<label for="max">Indique el punto mayor en el eje x: </label><br>
+<input type="number" id="max">
+
+<br><br>
+
+<button type="button" onclick="generarTabla()">Generar tabla</button>
+
+<br><br>
+<a href="index.html">Volver a la seleccion de funciones</a><br><br>
+
+<table id="miTabla">
+	<thead>
+		<tr>
+			<th>x</th>
+			<th>f(x)</th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+</center>
+
+<script>
+	function generarTabla() {
+		var m = document.getElementById("m").value;
+		var n = document.getElementById("n").value;
+
+		var min = document.getElementById("min").value;
+		var max = document.getElementById("max").value;
+
+		var tabla = document.getElementById("miTabla").getElementsByTagName("tbody")[0];
+		tabla.innerHTML = "";
+
+
+			for (var i = min; i <= max; i++) {
+				var fila = tabla.insertRow();
+				var celda1 = fila.insertCell();
+				var celda2 = fila.insertCell();
+				celda1.innerHTML = i;
+				celda2.innerHTML = (m * i) + parseFloat(n);
+			}
+		}
+
+</script>
+
+</body>
+
+</html>
