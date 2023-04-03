@@ -1,0 +1,101 @@
+<html>
+<head>
+	<title>Generador de Tabla de Valores</title>
+
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+		th {
+			background-color: #cccccc;
+		}
+	</style>
+
+</head>
+<body>
+<center><h1>Generador de Tabla de Valores</h1>
+
+<label for="tipo">Escoja el tipo de ecuación que desea tabular:</label>
+<select id="tipo">
+	<option value="1">Ecuación lineal (y = mx + n)</option>
+	<option value="2">Ecuación cuadrática (y = ax^2 + bx + c)</option>
+</select>
+
+<br><br>
+
+<label for="m">Inserte el valor de 'm' (si aplica): </label>
+<input type="number" id="m"><br><br>
+
+<label for="n">Inserte el valor de 'n' (si aplica): </label>
+<input type="number" id="n"><br><br>
+
+<label for="a">Inserte el valor de 'a' (si aplica): </label>
+<input type="number" id="a"><br><br>
+
+<label for="b">Inserte el valor de 'b' (si aplica): </label>
+<input type="number" id="b"><br><br>
+
+<label for="c">Inserte el valor de 'c' (si aplica): </label>
+<input type="number" id="c"><br><br>
+
+<label for="min">Indique el punto menor en el eje x: </label>
+<input type="number" id="min"><br><br>
+
+<label for="max">Indique el punto mayor en el eje x: </label>
+<input type="number" id="max">
+
+<br><br>
+
+<button type="button" onclick="generarTabla()">Generar tabla</button>
+
+<br><br>
+
+<table id="miTabla">
+	<thead>
+		<tr>
+			<th>x</th>
+			<th>f(x)</th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+</center>
+
+<script>
+	function generarTabla() {
+		var tipo = document.getElementById("tipo").value;
+		var m = document.getElementById("m").value;
+		var n = document.getElementById("n").value;
+		var a = document.getElementById("a").value;
+		var b = document.getElementById("b").value;
+		var c = document.getElementById("c").value;
+		var min = document.getElementById("min").value;
+		var max = document.getElementById("max").value;
+
+		var tabla = document.getElementById("miTabla").getElementsByTagName("tbody")[0];
+		tabla.innerHTML = "";
+
+		if (tipo == 1) {
+			for (var i = min; i <= max; i++) {
+				var fila = tabla.insertRow();
+				var celda1 = fila.insertCell();
+				var celda2 = fila.insertCell();
+				celda1.innerHTML = i;
+				celda2.innerHTML = (m * i) + parseFloat(n);
+			}
+		} else if (tipo == 2) {
+			for (var i = min; i <= max; i++) {
+				var fila = tabla.insertRow();
+				var celda1 = fila.insertCell();
+				var celda2 = fila.insertCell();
+				celda1.innerHTML = i;
+				celda2.innerHTML = (parseFloat(a) * Math.pow(i, 2)) + (parseFloat(b) * i) + parseFloat(c);
+			}
+		}
+	}
+</script>
+</body>
+</html>
