@@ -1,43 +1,35 @@
-/* Estilo para tabla */
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  margin: 0;
-  padding: 0;
+  background-color: #fff;
 }
 
-.hrespo {
-  font-size: 6vw; /*El tamaño del texto será del 6% del ancho de la ventana*/
-  text-align: center; /*Centra el texto en el contenedor*/
+.home {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.hresposub {
-  font-size: 3vw; /*El tamaño del texto será del 6% del ancho de la ventana*/
-  text-align: center; /*Centra el texto en el contenedor*/
-  font-style: italic;
+.in-flex {
+  flex: 1;
+  min-width: 250px;
 }
+.in-flex:first-child{
+  flex: 2;
+  padding: 25px;
+  background-color: #DFDFDF;
+  margin: 20px;
+  margin-bottom: 0px;
 
-p {
-  font-size: 16px;
-  line-height: 1.5;
-  max-width: 100%;
 }
-
-
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.in-flex div {
+  padding: 25px;
+  background-color: #DFDFDF;
+  margin: 20px;
 }
-
-footer p {
-  margin: 0;
-}
-
 
 table {
   width: 60%;
@@ -60,7 +52,31 @@ th {
   font-weight: bold;
 }
 
-/* Estilo para títulos */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+/*fafafdasf */
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 h1,
 h4 {
   margin: 0.5rem 0;
@@ -68,9 +84,7 @@ h4 {
   color: #333;
 }
 
-h1 {
-  font-size: 2.5rem;
-}
+
 
 h4 {
   font-size: 1.5rem;
@@ -127,12 +141,4 @@ input[type="number"] {
 input[type="number"]:focus {
   outline: none;
   border: 2px solid #333;
-}
-
-/* Estilo para fondo y cuerpo de la página */
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
 }

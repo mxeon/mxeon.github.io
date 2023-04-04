@@ -1,75 +1,92 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
 
-<head>
-  <title>Tabulacion de funciones</title>
-  <link href="estilo.css" rel="stylesheet" type="text/css">
-</head>
+    <link href="estilo.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <title>Tabulación de funciones</title>
 
-<body>
+  </head>
 
-  <center>
-  <h1 class="hrespo">Tabulacion de funciones</h1>
+  <body>
 
-  <h4 class="hresposub">Ecuación lineal (y = mx + n)</h4><br>
+    <section class="home">
+      <div class="in-flex">
 
-  <label for="m">Inserte el valor de 'm': </label><br>
-<input type="number" id="m"><br><br>
+        <center>
+        <h1 class="hrespo">Tabulacion de funciones</h1>
 
-<label for="n">Inserte el valor de 'n': </label><br>
-<input type="number" id="n"><br><br>
+        <h4 class="hresposub">Ecuación lineal (y = mx + n)</h4><br>
 
-<label for="min">Indique el punto menor en el eje x: </label><br>
-<input type="number" id="min"><br><br>
+        <label for="m">Inserte el valor de 'm': </label><br>
+      <input type="number" id="m"><br><br>
 
-<label for="max">Indique el punto mayor en el eje x: </label><br>
-<input type="number" id="max">
+      <label for="n">Inserte el valor de 'n': </label><br>
+      <input type="number" id="n"><br><br>
 
-<br><br>
+      <label for="min">Indique el punto menor en el eje x: </label><br>
+      <input type="number" id="min"><br><br>
 
-<button type="button" onclick="generarTabla()">Generar tabla</button>
+      <label for="max">Indique el punto mayor en el eje x: </label><br>
+      <input type="number" id="max">
 
-<br><br>
-<a href="index.html">Volver a la seleccion de funciones</a><br><br>
+      <br><br>
 
-<table id="miTabla">
-	<thead>
-		<tr>
-			<th>x</th>
-			<th>f(x)</th>
-		</tr>
-	</thead>
-	<tbody>
-	</tbody>
-</table>
-</center>
+      <button type="button" onclick="generarTabla()">Generar tabla</button>
 
-<script>
-	function generarTabla() {
-		var m = document.getElementById("m").value;
-		var n = document.getElementById("n").value;
+      <br><br>
+      <a href="index.html">Volver a la seleccion de funciones</a><br><br>
 
-		var min = document.getElementById("min").value;
-		var max = document.getElementById("max").value;
+      </div>
+        <div class="in-flex">
+          <div>
+            <center>
+            <table id="miTabla">
+            	<thead>
+            		<tr>
+            			<th>x</th>
+            			<th>f(x)</th>
+            		</tr>
+            	</thead>
+            	<tbody>
+            	</tbody>
+            </table>
 
-		var tabla = document.getElementById("miTabla").getElementsByTagName("tbody")[0];
-		tabla.innerHTML = "";
+            <script>
+            	function generarTabla() {
+            		var m = document.getElementById("m").value;
+            		var n = document.getElementById("n").value;
+
+            		var min = document.getElementById("min").value;
+            		var max = document.getElementById("max").value;
+
+            		var tabla = document.getElementById("miTabla").getElementsByTagName("tbody")[0];
+            		tabla.innerHTML = "";
 
 
-			for (var i = min; i <= max; i++) {
-				var fila = tabla.insertRow();
-				var celda1 = fila.insertCell();
-				var celda2 = fila.insertCell();
-				celda1.innerHTML = i;
-				celda2.innerHTML = (m * i) + parseFloat(n);
-			}
-		}
+            			for (var i = min; i <= max; i++) {
+            				var fila = tabla.insertRow();
+            				var celda1 = fila.insertCell();
+            				var celda2 = fila.insertCell();
+            				celda1.innerHTML = i;
+            				celda2.innerHTML = (m * i) + parseFloat(n);
+            			}
+            		}
 
-</script>
-<br><br><br><br>
-<footer>
-  <p>&copy; 2023 Mario Ulises Molina Chávez, Leslie Alessandra Calderón Coronado. Todos los derechos reservados.</p>
-</footer>
+            </script>
+            <br><br><br><br>
+            </center>
+          </div>
 
-</body>
+        </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Mario Ulises Molina Chávez, Leslie Alessandra Calderón Coronado. Todos los derechos reservados.</p>
+    </footer>
+
+  </body>
 
 </html>
