@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <link href="estilo.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <title>Tabulación de funciones</title>
+
+  </head>
+
+  <body>
+
+    <section class="home">
+      <div class="in-flex">
+
+        <center>
+        <h1 class="hrespo">Tabulacion de funciones</h1>
+
+        <h4 class="hresposub">Ecuación trigonometrica seno [y = sen(mx)]</h4><br>
+
+        <label for="m">Inserte el valor de 'm': </label><br>
+      <input type="number" id="m"><br><br>
+
+      <label for="min">Indique el punto menor en el eje x: </label><br>
+      <input type="number" id="min"><br><br>
+
+      <label for="max">Indique el punto mayor en el eje x: </label><br>
+      <input type="number" id="max">
+
+      <br><br>
+
+      <button type="button" onclick="generarTabla()">Generar tabla</button>
+
+      <br><br>
+      <a href="index.html">Volver a la seleccion de funciones</a><br><br>
+
+      </div>
+        <div class="in-flex">
+          <div>
+            <center>
+            <table id="miTabla">
+            	<thead>
+            		<tr>
+            			<th>x</th>
+            			<th>f(x)</th>
+            		</tr>
+            	</thead>
+            	<tbody>
+            	</tbody>
+            </table>
+
+            <script>
+            	function generarTabla() {
+            		var m = document.getElementById("m").value;
+
+            		var min = document.getElementById("min").value;
+            		var max = document.getElementById("max").value;
+
+            		var tabla = document.getElementById("miTabla").getElementsByTagName("tbody")[0];
+            		tabla.innerHTML = "";
+
+
+            			for (var i = min; i <= max; i++) {
+                    var m = document.getElementById("m").value;
+            				var fila = tabla.insertRow();
+            				var celda1 = fila.insertCell();
+            				var celda2 = fila.insertCell();
+            				celda1.innerHTML = i;
+            				celda2.innerHTML = Math.sin(m * i);
+            			}
+            		}
+
+            </script>
+            <br><br><br><br>
+            </center>
+          </div>
+
+        </div>
+    </section>
+
+    <footer>
+    </footer>
+
+  </body>
+
+</html>
